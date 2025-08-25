@@ -19,7 +19,7 @@ mod lz4;
 mod lzma;
 #[cfg(feature = "xz")]
 mod xz;
-#[cfg(feature = "lzma")]
+#[cfg(any(feature = "lzma", feature = "xz"))]
 mod xz2;
 #[cfg(feature = "zlib")]
 mod zlib;
@@ -44,7 +44,7 @@ pub(crate) use self::lz4::{Lz4Decoder, Lz4Encoder};
 pub(crate) use self::lzma::{LzmaDecoder, LzmaEncoder};
 #[cfg(feature = "xz")]
 pub(crate) use self::xz::{XzDecoder, XzEncoder};
-#[cfg(feature = "lzma")]
+#[cfg(any(feature = "lzma", feature = "xz"))]
 pub(crate) use self::xz2::{Xz2Decoder, Xz2Encoder, Xz2FileFormat};
 #[cfg(feature = "zlib")]
 pub(crate) use self::zlib::{ZlibDecoder, ZlibEncoder};
