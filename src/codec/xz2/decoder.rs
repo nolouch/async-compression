@@ -1,6 +1,6 @@
 use std::{fmt, io};
 
-use liblzma::stream::{Action, Status, Stream};
+use xz2::stream::{Action, Status, Stream};
 
 use crate::{codec::Decode, util::PartialBuffer};
 
